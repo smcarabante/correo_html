@@ -1,7 +1,15 @@
 function enviarCorreo() {
-  // Reemplaza estas variables con tus datos
-  var destinatario = "sergio7carabante@gmail.com";
+  // Lista de destinatarios
+  var destinatarios = [
+    "correo1@example.com",
+    "correo2@example.com",
+    "correo3@example.com"
+  ];
+  
+  // Asunto del correo electrónico
   var asunto = "Asunto del correo electrónico";
+  
+  // Cuerpo HTML del correo electrónico
   var cuerpoHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,13 +86,14 @@ function enviarCorreo() {
 </body>
 </html>`;
 
-  // Envía el correo electrónico
-  MailApp.sendEmail({
-    to: destinatario,
-    subject: asunto,
-    htmlBody: cuerpoHtml
-  });
-
-  Logger.log("Correo enviado con éxito.");
+  // Envía el correo electrónico a cada destinatario
+  for (var i = 0; i < destinatarios.length; i++) {
+    MailApp.sendEmail({
+      to: destinatarios[i],
+      subject: asunto,
+      htmlBody: cuerpoHtml
+    });
+    
+    Logger.log("Correo enviado a: " + destinatarios[i]);
+  }
 }
-
