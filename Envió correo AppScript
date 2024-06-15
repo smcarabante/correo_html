@@ -1,1 +1,90 @@
+function enviarCorreo() {
+  // Reemplaza estas variables con tus datos
+  var destinatario = "sergio7carabante@gmail.com";
+  var asunto = "Asunto del correo electrónico";
+  var cuerpoHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 0 0 8px 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👨‍💼 ¡Gran Noticia! ¿Eres pensionado de CASUR? <br><br>¡No puedes dejar pasar esta oportunidad para obtener tu crédito destino, ya sea para Libre Inversión o Compra de Cartera  </h1>
+        </div>
+        <div class="content">
+            <p>Cordial Saludo<br>Mi nombre es <b>Sergio Miguel Carabante Buitrago</b> 👨‍💼 Ejecutivo Comercial de Libranza<br> Espero se encuentre muy bien 💪</brt></p>
+            <p><h1>¿Por qué elegirnos?</h1>
+
+                ✅ <strong>Atendemos a Todos: </strong>Incluso si estás reportado o tienes embargos, <b>¡aquí encontrarás soluciones! 🔥</b><br>
+                
+                ✅ <b>Compramos tu Cartera:</b> No importa de qué entidad sea, ¡estamos aquí para ayudarte a aligerar tu carga financiera! 🚀<br>
+                
+                ✅ <b>Proceso 100% Digital:</b>Proceso 100% Digital: Agilidad y eficiencia son nuestra prioridad. Con nosotros, <b>¡obtén desembolsos rápidos y sin complicaciones!</b> 💯</p>
+            <a href="https://www.facebook.com/profile.php?id=100094119348821" class="btn">Conoce más de nosotros</a>
+            <p>Estoy aquí para responder cualquier pregunta y atender tu interés de manera personalizada 🤝. Para empezar, solo necesitamos tu último desprendible para validar tu capacidad financiera 💥</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Nuestro Servicio. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>`;
+
+  // Envía el correo electrónico
+  MailApp.sendEmail({
+    to: destinatario,
+    subject: asunto,
+    htmlBody: cuerpoHtml
+  });
+
+  Logger.log("Correo enviado con éxito.");
+}
 
